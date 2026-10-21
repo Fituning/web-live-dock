@@ -6,7 +6,7 @@ import com.intellij.openapi.actionSystem.ActionUpdateThread
 import com.intellij.openapi.actionSystem.AnAction
 import com.intellij.openapi.actionSystem.AnActionEvent
 import com.intellij.openapi.actionSystem.DefaultActionGroup
-import com.intellij.openapi.actionSystem.impl.ActionToolbarImpl
+import com.intellij.openapi.actionSystem.ActionManager
 import com.intellij.openapi.project.Project
 import com.intellij.openapi.ui.ComboBox
 import com.intellij.openapi.util.Disposer
@@ -32,6 +32,7 @@ import java.awt.BorderLayout
 import java.awt.FlowLayout
 import java.awt.event.KeyAdapter
 import java.awt.event.KeyEvent
+import javax.swing.JList
 import javax.swing.JPanel
 import javax.swing.SwingConstants
 import javax.swing.SwingUtilities
@@ -76,7 +77,9 @@ class WebPreviewPanel(
         presetComboBox = ComboBox(ResponsivePreset.values()).apply {
             selectedItem = initialPreset
             toolTipText = "Sélectionner un format d'appareil ou breakpoint Tailwind CSS"
-            renderer = SimpleListCellRenderer.create { label, value, _ ->
+            renderer = object : SimpleListCellRenderer<ResponsivePreset>() {
+            override fun customize(list: JList<out ResponsivePreset>, value: ResponsivePreset?, index: Int, selected: Boolean, hasFocus: Boolean) {
+                val label = this
                 label.text = value?.displayName ?: ""
                 label.icon = when (value) {
                     ResponsivePreset.AUTO -> AllIcons.General.Web
@@ -85,6 +88,7 @@ class WebPreviewPanel(
                     ResponsivePreset.LG, ResponsivePreset.XL, ResponsivePreset.TW_2XL -> AllIcons.Nodes.Desktop
                     null -> null
                 }
+            }
             }
         }
 
@@ -268,7 +272,7 @@ class WebPreviewPanel(
             })
         }
 
-        val navToolbar = ActionToolbarImpl("WebPreviewNavToolbar", navActionGroup, true)
+        val navToolbar = ActionManager.getInstance().createActionToolbar("WebPreviewNavToolbar", navActionGroup, true)
         navToolbar.targetComponent = this
 
         val leftPanel = JPanel(FlowLayout(FlowLayout.LEFT, 4, 2)).apply {
@@ -352,17 +356,13 @@ class WebPreviewPanel(
             // DevTools Action
             add(object : AnAction("DevTools", "Ouvrir l'inspecteur Chromium", AllIcons.Toolwindows.ToolWindowDebugger) {
                 override fun actionPerformed(e: AnActionEvent) {
-                    try {
-                        browser.openDevtools()
-                    } catch (ex: Exception) {
-                        browser.cefBrowser.devTools
-                    }
+                    browser.openDevtools()
                 }
                 override fun getActionUpdateThread(): ActionUpdateThread = ActionUpdateThread.BGT
             })
         }
 
-        val viewActionsToolbar = ActionToolbarImpl("WebPreviewViewActionsToolbar", viewActionsGroup, true)
+        val viewActionsToolbar = ActionManager.getInstance().createActionToolbar("WebPreviewViewActionsToolbar", viewActionsGroup, true)
         viewActionsToolbar.targetComponent = this
         rightPanel.add(viewActionsToolbar.component)
 

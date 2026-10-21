@@ -5,7 +5,7 @@ import com.intellij.openapi.actionSystem.ActionUpdateThread
 import com.intellij.openapi.actionSystem.AnAction
 import com.intellij.openapi.actionSystem.AnActionEvent
 import com.intellij.openapi.actionSystem.DefaultActionGroup
-import com.intellij.openapi.actionSystem.impl.ActionToolbarImpl
+import com.intellij.openapi.actionSystem.ActionManager
 import com.intellij.openapi.fileEditor.OpenFileDescriptor
 import com.intellij.openapi.project.Project
 import com.intellij.openapi.ui.ComboBox
@@ -125,7 +125,7 @@ class WebConsolePanel(
             override fun getActionUpdateThread(): ActionUpdateThread = ActionUpdateThread.BGT
         }
         val actionGroup = DefaultActionGroup(clearAction)
-        val toolbar = ActionToolbarImpl("WebConsoleToolbar", actionGroup, true)
+        val toolbar = ActionManager.getInstance().createActionToolbar("WebConsoleToolbar", actionGroup, true)
         toolbar.targetComponent = this
         rightHeader.add(toolbar.component)
 
