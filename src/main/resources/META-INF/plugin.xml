@@ -2,40 +2,41 @@
     <id>com.plugin.webpreview</id>
     <name>Web Live Dock</name>
     <version>1.1.0</version>
-    <vendor email="c.azancoth@gmail.com" url="https://kotheastudio.com">Kothea Studio</vendor>
+    <vendor>Kothea Studio</vendor>
 
     <description><![CDATA[
-    <h3>🚀 Aperçu Web en Direct &amp; Console Client Intégrée pour Nuxt, Vue &amp; Vite</h3>
-    <p><b>Web Live Dock</b> élimine les allers-retours permanents entre votre éditeur et votre navigateur externe en intégrant un navigateur Chromium dézoomé et une console web temps réel directement dans le volet inférieur de WebStorm et IntelliJ IDEA.</p>
+    <p>Web Live Dock brings an embedded Chromium preview and a real-time client web console directly into the bottom tool window of WebStorm, PhpStorm, and IntelliJ-based IDEs.</p>
 
-    <h4>✨ Fonctionnalités Clés :</h4>
+    <p>Eliminate permanent context switching between your code editor and external browser windows. Designed specifically for modern web frameworks including Nuxt, Vue, Vite, Next.js, and React.</p>
+
+    <h3>Key Features</h3>
     <ul>
-        <li><b>📱 Simulateur Responsive &amp; Breakpoints Tailwind CSS :</b> Basculez en un clic sur vos formats clés (<i>Mobile &lt;sm 390px</i>, <i>sm: 640px</i>, <i>md: 768px</i>, <i>lg: 1024px</i>, <i>xl: 1280px</i>, <i>2xl: 1536px</i>) pour tester instantanément vos media queries et mises en page adaptatives.</li>
-        <li><b>🔍 Mode Auto-Fit (Hauteur) :</b> Calibre automatiquement le zoom pour que l'intégralité de votre mockup (mobile, tablette, desktop) tienne parfaitement dans la hauteur de votre dock sans aucun scroll vertical ni redimensionnement manuel.</li>
-        <li><b>🔴 Console Web Client en Temps Réel :</b> Intercepte directement toutes les sorties JavaScript de la page (<code>console.log</code>, <code>console.error</code>, avertissements Vue/Nuxt, erreurs d'hydratation SSR).</li>
-        <li><b>⚡ Navigation Source au Double-Clic :</b> Double-cliquez sur n'importe quel log d'erreur pour ouvrir instantanément le fichier correspondant (ex: <code>pages/index.vue:42</code>) à la bonne ligne dans votre éditeur.</li>
-        <li><b>👁️ Masquage / Affichage de la Console :</b> Masquez la console en un clic pour accorder 100% de la largeur du dock à la prévisualisation web.</li>
-        <li><b>🔄 Disposition Flexible :</b> Basculez instantanément entre une disposition côte-à-côte (horizontal) et superposée (vertical).</li>
-        <li><b>🛠️ DevTools Chromium Officiels :</b> Ouvrez les DevTools intégrés en fenêtre dédiée pour inspecter le DOM ou le réseau quand vous en avez besoin.</li>
-        <li><b>⚡ Hot Module Replacement (HMR) :</b> Prise en charge native des WebSockets pour une actualisation instantanée lors de la sauvegarde de votre code.</li>
+        <li><b>Responsive Simulator &amp; Tailwind CSS Breakpoints:</b> Switch seamlessly between standard viewports (Mobile &lt;sm 390px, sm: 640px, md: 768px, lg: 1024px, xl: 1280px, 2xl: 1536px) to test adaptive media queries instantly.</li>
+        <li><b>Auto-Fit Height Mode:</b> Automatically calculates the optimal zoom scale so your entire mockup (mobile, tablet, desktop) fits inside the bottom dock height with zero vertical scrolling.</li>
+        <li><b>Real-Time Client Web Console:</b> Captures JavaScript console output (console.log, console.error, Vue/Nuxt warnings, SSR hydration mismatches) alongside your live preview.</li>
+        <li><b>Jump to Source Code:</b> Double-click any log message to open the corresponding source file and line directly in your editor.</li>
+        <li><b>Toggle Console:</b> Hide or show the web console in one click to give 100% of the dock width to the browser preview.</li>
+        <li><b>Flexible Layout Orientation:</b> Switch instantly between side-by-side (horizontal) and stacked (vertical) viewports.</li>
+        <li><b>Official Chromium DevTools:</b> Inspect DOM elements, network requests, and storage in a dedicated window.</li>
+        <li><b>Hot Module Replacement (HMR):</b> Full WebSocket support for instant hot reload whenever you save your code.</li>
     </ul>
 
-    <p>Conçu par <b>Kothea Studio</b> pour maximiser votre productivité et offrir une expérience de développement fluide sans rupture de contexte.</p>
+    <p>Crafted by Kothea Studio for a seamless development experience.</p>
     ]]></description>
 
     <change-notes><![CDATA[
     <h3>v1.1.0</h3>
     <ul>
-        <li><b>Nouveau :</b> Sélecteur de Breakpoints Tailwind CSS (Mobile, sm, md, lg, xl, 2xl).</li>
-        <li><b>Nouveau :</b> Mode Auto-Fit (Hauteur) adaptant l'échelle au volet inférieur sans scroll vertical.</li>
-        <li><b>Nouveau :</b> Bouton d'action pour masquer / réafficher la console web en un clic (100% largeur).</li>
-        <li><b>Nouveau :</b> Bascule d'orientation du dock (côte-à-côte vs superposé).</li>
-        <li><b>Nouveau :</b> Logo officiel vectoriel Kothea Studio pour le plugin.</li>
-        <li><b>Correction :</b> Maintien permanent du canvas Chromium lors du masquage/réaffichage de la console.</li>
+        <li>New: Tailwind CSS Breakpoint triggers (Mobile, sm, md, lg, xl, 2xl).</li>
+        <li>New: Auto-Fit Height mode scaling viewports without vertical scrolling.</li>
+        <li>New: One-click action to toggle web console visibility (100% width preview).</li>
+        <li>New: Layout orientation switcher (side-by-side vs stacked).</li>
+        <li>New: Official Kothea Studio vector plugin icon.</li>
+        <li>Fix: Preserved Chromium native canvas peer across console toggle events.</li>
     </ul>
     <h3>v1.0.0</h3>
     <ul>
-        <li>Version initiale avec ToolWindow inférieure, Chromium JCEF dézoomé, et console d'erreurs web temps réel.</li>
+        <li>Initial release with bottom tool window, embedded Chromium browser, and client web console.</li>
     </ul>
     ]]></change-notes>
 
