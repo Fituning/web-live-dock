@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E2028"/>
+      <stop offset="100%" stop-color="#0E1015"/>
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3574F0"/>
+      <stop offset="100%" stop-color="#00DC82"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background squircle -->
+  <rect x="2" y="2" width="36" height="36" rx="9" fill="url(#bgGrad)" stroke="#383C4A" stroke-width="1"/>
+
+  <!-- Dock browser frame -->
+  <rect x="6" y="8" width="28" height="24" rx="4" fill="#14161D" stroke="url(#accentGrad)" stroke-width="1.5"/>
+
+  <!-- Top bar of dock -->
+  <line x1="6" y1="14" x2="34" y2="14" stroke="#2B2D38" stroke-width="1"/>
+  <circle cx="9.5" cy="11" r="1.2" fill="#E5484D"/>
+  <circle cx="13.5" cy="11" r="1.2" fill="#F5A623"/>
+  <circle cx="17.5" cy="11" r="1.2" fill="#00DC82"/>
+
+  <!-- Split line inside dock: Left Web preview, Right console -->
+  <line x1="22" y1="14" x2="22" y2="32" stroke="#2B2D38" stroke-width="1"/>
+
+  <!-- Web layout mockup (left) -->
+  <rect x="8.5" y="17" width="11" height="3.5" rx="1" fill="#3574F0" opacity="0.8"/>
+  <rect x="8.5" y="22" width="7" height="2" rx="0.8" fill="#6C707E" opacity="0.6"/>
+  <rect x="8.5" y="25.5" width="11" height="4.5" rx="1" fill="#222530"/>
+
+  <!-- Live console lines (right) -->
+  <circle cx="25" cy="18" r="1" fill="#00DC82"/>
+  <line x1="27.5" y1="18" x2="31.5" y2="18" stroke="#6C707E" stroke-width="1" stroke-linecap="round"/>
+  <circle cx="25" cy="22" r="1" fill="#F5A623"/>
+  <line x1="27.5" y1="22" x2="31" y2="22" stroke="#6C707E" stroke-width="1" stroke-linecap="round"/>
+  <circle cx="25" cy="26" r="1" fill="#E5484D"/>
+  <line x1="27.5" y1="26" x2="30.5" y2="26" stroke="#E5484D" stroke-width="1" stroke-linecap="round"/>
+</svg>
